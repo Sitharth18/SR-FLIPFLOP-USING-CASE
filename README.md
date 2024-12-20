@@ -34,15 +34,49 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Design the SR Flip Flop circuit using the IC 7474, switches, LEDs, and wires.
+
+2.Configure the input switches (S and R) to apply different input combinations.
+
+3.Run the simulation to observe the output (Q and Q') on the LEDs.
+
+4.Verify the output with the SR Flip Flop truth table to ensure correct functionality.
+
+5.Analyze the results, take screenshots, and generate a report to document the experiment.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program for flipflops and verify its truth table in quartus using Verilog programming.
+
+Developed by:Sitharth.B.S 
+RegisterNumber:24900657
 */
+```
+module exp6(S,R,clk,Q,Qbar);
+input S,R,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin 
+Q=S|((~R)&Q);
+Qbar=R|((~S)&(Qbar));
+end 
+endmodule
+```
+
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![image](https://github.com/user-attachments/assets/acbe1d2a-01d3-4f67-a45d-d1060a11ca77)
+
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![image](https://github.com/user-attachments/assets/12ea10e8-8598-4e39-bcaa-49a06f775352)
+
+
 **RESULTS**
+
+The SR Flip-Flop implemented in Verilog successfully validates its functionality according to its truth tables.
